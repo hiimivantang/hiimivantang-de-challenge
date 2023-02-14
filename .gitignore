@@ -1,3 +1,4 @@
 credentials.tfvars
 .terraform*
 .terraform/
+*.swp
