@@ -34,6 +34,7 @@ create table if not exists acme.customers (
 create table if not exists acme.sales (
   id SERIAL primary key,
   order_date timestamp not null, 
+  completed boolean default false,
   fulfilled boolean default false
 );
 
