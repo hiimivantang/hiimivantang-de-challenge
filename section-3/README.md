@@ -6,7 +6,7 @@
 
 ### Implementing Role-Based Access Control for Logistics, Analytics, and Sales teams.
 
-In order to allow different team members to perform different operations on the database, first we need to create groups within Postgres. This allows us to grant privileges at the group-level as opposed to granting it laboriously one user at at time. The following groups are created in Postgres:
+In order to allow different team members to perform different operations on the database, first we need to create groups within Postgres. This allows us to grant privileges at the group-level as opposed to granting it laboriously one user at a time. The following groups are created in Postgres:
 1. Logistics
 2. Analytics
 3. Sales
