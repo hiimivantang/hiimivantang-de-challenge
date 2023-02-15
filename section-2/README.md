@@ -4,7 +4,7 @@
 
 Adopting a star schema to organize the data in the database ensures that it is easy to understand and analyze.
 
-At the center of the Star Schema is our fact table, which in our case is the `sales_details` table stores the line items for each transaction, i.e. one transaction can consist of multiple records in `sales_details` table.
+At the center of the Star Schema is our fact table, which in our case is the `sales_details` table that stores the line items for each transaction, i.e. one transaction can consist of multiple records in `sales_details` table.
 
 Surrounding the fact table are the dimension tables that store descriptive information for all related fields in the `sales_details` fact table. Here are the 3 dimension tables: 
 1. `customers` - Contains customer related information such as membership id, name, birth date, email address, and mobile number.
