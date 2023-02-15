@@ -2,7 +2,7 @@
 
 ## Star Schema
 
-Adopting a star schema to organize the data in the database ensures that is is easy to understand and analyze.
+Adopting a star schema to organize the data in the database ensures that is easy to understand and analyze.
 
 At the center of the Star Schema is our fact table, which in our case is the `sales_details` table stores the line items for each transaction, i.e. one transaction can consist of multiple records in `sales_details` table.
 
