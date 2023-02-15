@@ -25,6 +25,8 @@ name,
 first_name,
 last_name,
 date_format(parsed_date_of_birth, 'yyyyMMdd') as date_of_birth,
+email,
+mobile_no,
 parsed_date_of_birth <= (DATE'2022-01-1' - INTERVAL '18' YEAR) as above_18,
 email regexp '^.*@.*(.com|.net)' as valid_email,
 mobile_no regexp '^[0-9]{8}$' as valid_mobile

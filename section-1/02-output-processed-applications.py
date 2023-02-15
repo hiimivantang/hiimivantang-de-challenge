@@ -10,7 +10,7 @@ failed_applications.write.format('csv').mode('overwrite').option('header',True).
 # COMMAND ----------
 
 # MAGIC %sh 
-# MAGIC rm -rf /dbfs/mnt/hiimivantang-canedge
+# MAGIC pwd
 
 # COMMAND ----------
 
