@@ -130,3 +130,15 @@ WHERE
 Output files are being generated and saved in a S3 bucket. For convenience, I've committed those files into this git repository and can be found here:
 * [./output/successful_applications.csv](./output/successful_applications.csv)
 * [./output/failed_applications.csv](./output/failed_applications.csv)
+
+
+
+## Productionalizing the data pipeline
+
+We need to have segregated environments to facilitate development, unit/integration testing, and finally execution of production pipelines.
+In our case, we can have three separate workspaces for DEV, STAGING, and PROD.
+
+Here's a CI/CD reference architecture for continuously testing/integrating and deployment of our data pipelines into the proudction environment.
+
+![](./ci_cd.png)
+
