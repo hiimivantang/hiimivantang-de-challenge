@@ -20,7 +20,7 @@ select date_format(Date, 'dd-MM-yyy') as Date, 'Deaths' as status, Deaths - LAG(
 ```
 
 
-Here are the charts visualizing daily cases and deaths over timeframes.
+Here are the charts visualizing daily cases and deaths over various timeframes.
 
 
 ![](covid_2_weeks.png)
