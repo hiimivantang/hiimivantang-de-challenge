@@ -2,3 +2,4 @@ credentials.tfvars
 .terraform*
 .terraform/
 *.swp
+.DS_Store/
