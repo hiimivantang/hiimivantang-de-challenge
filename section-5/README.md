@@ -1,4 +1,4 @@
-# Section 5
+# Section 5: Machine Learning
 
 
 ## Problem statement

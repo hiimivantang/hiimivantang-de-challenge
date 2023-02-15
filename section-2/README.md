@@ -1,4 +1,4 @@
-# Section 2
+# Section 2: Databases
 
 ## Star Schema
 

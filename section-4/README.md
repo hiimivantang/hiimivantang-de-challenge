@@ -1,4 +1,4 @@
-# Section 4: 
+# Section 4: Charts & APIs
 
 Steps to recreate the charts: 
 1. Download the data by running the following command: 

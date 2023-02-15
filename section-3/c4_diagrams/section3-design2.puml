@@ -12,21 +12,24 @@ Component(frontend_app, "(Mobile) frontend Application", "User facing")
 Container(api_gateway, "API Gateway", "Reverse proxy")
 Container(web_app_1, "Web Application 1", "handles images uploaded via API")
 Container(web_app_2, "Web Application 2", "real-time ingestion of images")
-Container(kafka_cluster, "Event Streaming Platform", "Kafka brokers + Kafka Connect workers")
+Container(kafka_cluster, "Confluent Event Streaming Platform", "Kafka brokers + Kafka Connect workers")
 Container(delta_lake, "Cloud Object Storage", "S3", "All layers are stored in separate S3 buckets which are encrypted with customer managed keys.\n\nS3 bucket for Bronze layer has retention period of 7 days.", $sprite=img:"delta_lake.PNG")
 Container(workloads, " ", "all major workloads", $sprite=img:"lakehouse_workloads.PNG")
 
-Boundary(compute, "Compute Layer", "Databricks"){
+Boundary(compute, "Databricks Lakehouse Platform", "Elastic compute"){
 Container(interactive_clusters, "Databricks Interactive Clusters", "for development")
 Container(job_clusters, "Databricks Job Clusters", "for scheduled batch jobs")
 Container(dbsql_clusters, "Databricks SQL Warehouse", "Optimized compute for BI applications")
 }
+
+Container(tableau_server, "Tableau Server", "BI resource", "deployed in same cloud environment")
 
 Lay_D(web_app_1, web_app_2)
 Lay_U(delta_lake, job_clusters)
 Lay_R(interactive_clusters, job_clusters)
 Lay_R(job_clusters, dbsql_clusters)
 Lay_U(job_clusters, workloads)
+
  
 Rel(end_user, api_gateway, " ")
 Rel(frontend_app, api_gateway, " ")
@@ -38,3 +41,5 @@ Rel_R(kafka_cluster, delta_lake, " ")
 Rel_U(delta_lake, interactive_clusters, " ")
 Rel_U(delta_lake, job_clusters, " ")
 Rel_U(delta_lake, dbsql_clusters, " ")
+Rel_R(dbsql_clusters, tableau_server, " ")
+Rel_R(delta_lake, tableau_server, " ")
