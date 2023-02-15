@@ -23,6 +23,8 @@ Container(dbsql_clusters, "Databricks SQL Warehouse", "Optimized compute for BI 
 }
 
 Container(tableau_server, "Tableau Server", "BI resource", "deployed in same cloud environment")
+Person_Ext(bi_user, "BI analysts")
+
 
 Lay_D(web_app_1, web_app_2)
 Lay_U(delta_lake, job_clusters)
@@ -43,3 +45,6 @@ Rel_U(delta_lake, job_clusters, " ")
 Rel_U(delta_lake, dbsql_clusters, " ")
 Rel_R(dbsql_clusters, tableau_server, " ")
 Rel_R(delta_lake, tableau_server, " ")
+Rel_R(tableau_server, bi_user, " ")
+Rel_R(dbsql_clusters, bi_user, " ")
+Rel(compute, workloads, " ")
