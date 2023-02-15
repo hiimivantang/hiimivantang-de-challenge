@@ -15,11 +15,18 @@ Surrounding the fact table are the dimension tables that store descriptive infor
 
 ![ER Diagram](./images/er_diagram.png)
 
+### DDL statements and mock data
+
+The DDL statements for the creation of schemas, tables, users, and groups are written in the `ddl_statements.sql` file. This file will be copy into the `/docker-entrypoint-initdb.d/` directory of Postgres docker container and will be executed as soon as the container is starter.
+
+In addition to the DDL statements, `ddl_statements.sql` also contain INSERT statements for creating mock data for our Proof of Concept (POC).
 
 
-See below for the sample queries and results based on the Proof of Concept. 
+
 
 ### Which are the top 10 members by spending?
+
+See below for the sample queries and results based on the Proof of Concept. 
 
 ```
 with top_spenders as (
