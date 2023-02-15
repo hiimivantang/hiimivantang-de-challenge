@@ -1,11 +1,25 @@
+# Section 2
+
+## Star Schema
+
+Adopting a star schema to organize the data in the database ensures that is is easy to understand and analyze.
+
+At the center of the Star Schema is our fact table, which in our case is the `sales_details` table stores the line items for each transaction, i.e. one transaction can consist of multiple records in `sales_details` table.
+
+Surrounding the fact table are the dimension tables that store descriptive information for all related fields in the `sales_details` fact table. Here are the 3 dimension tables: 
+1. `customers` - Contains customer related information such as membership id, name, birth date, email address, and mobile number.
+2. `items` - Contains price, weight, and manufacturer information for each individual item,
+3. `sales` - Contains transaction timestamp, and whether transaction is completed and fulfilled. 
 
 
-![ER Diagram](./er_diagram.png)
+
+![ER Diagram](./images/er_diagram.png)
 
 
 
+See below for the sample queries and results based on the Proof of Concept. 
 
-## Which are the top 10 members by spending?
+### Which are the top 10 members by spending?
 
 ```
 with top_spenders as (
@@ -39,6 +53,7 @@ inner join customers on
   customers.id = top_spenders.customer_id
 ```
 
+![](./images/query-1-results.png)
 
 
 ## Which are the top 3 items that are frequently bought by members
@@ -70,3 +85,5 @@ from
 inner join items on
   items.id = frequent_items.item_id
 ```
+
+![](./images/query-2-results.png)
